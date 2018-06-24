@@ -1,0 +1,1 @@
+Enables visiblity toggling on in-flight wings, and prevents them from hiding capes.

@@ -1,0 +1,3 @@
+author = Brianide
+version = 0.1
+displayName = Wingless Flight
