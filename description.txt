@@ -1,1 +1,3 @@
 Enables visiblity toggling on in-flight wings, and prevents them from hiding capes.
+
+This mod is a pre-release, and may contain bugs or incompatibilities with other mods.

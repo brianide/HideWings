@@ -1,3 +1,5 @@
 author = Brianide
 version = 0.1
 displayName = Wingless Flight
+homepage = https://github.com/brianide/WinglessFlight
+buildIgnore = LICENSE, *.md, .vs\*, *.csproj.user
