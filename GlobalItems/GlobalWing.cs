@@ -1,4 +1,5 @@
 ﻿using WinglessFlight.Items;
+using static WinglessFlight.Constants;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -18,13 +19,13 @@ namespace WinglessFlight.GlobalItems
             bool visibleWings = false;
 
             // Iterate over accessory slots
-            for (int i = Constants.AccessoryOffset; i < Constants.AccessoryOffset + Constants.AccessoryCount + player.extraAccessorySlots; i++)
+            for (int i = AccessoryOffset; i < AccessoryOffset + AccessoryCount + player.extraAccessorySlots; i++)
             {
                 if(!player.hideVisual[i])
                 {
                     if (smokerSlot < 0 && player.armor[i].type == mod.ItemType<Smoker>())
                     {
-                        smokerSlot = i - Constants.AccessoryOffset;
+                        smokerSlot = i - AccessoryOffset;
                     }
 
                     visibleWings |= player.armor[i].wingSlot > 0;
@@ -32,11 +33,11 @@ namespace WinglessFlight.GlobalItems
             }
 
             // Iterate over social accessory slots
-            for (int i = Constants.SocialOffset; i < Constants.SocialOffset + Constants.AccessoryCount + player.extraAccessorySlots; i++)
+            for (int i = SocialOffset; i < SocialOffset + AccessoryCount + player.extraAccessorySlots; i++)
             {
                 if (smokerSlot < 0 && player.armor[i].type == mod.ItemType<Smoker>())
                 {
-                    smokerSlot = i - Constants.SocialOffset;
+                    smokerSlot = i - SocialOffset;
                 }
 
                 visibleWings |= player.armor[i].wingSlot > 0;

@@ -1,6 +1,6 @@
 ﻿namespace WinglessFlight
 {
-    class Constants
+    static class Constants
     {
         public const int AccessoryOffset = 3;
         public const int SocialOffset = 13;

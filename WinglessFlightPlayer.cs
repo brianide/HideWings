@@ -1,4 +1,5 @@
 ﻿using WinglessFlight.Items;
+using static WinglessFlight.Constants;
 using Terraria.ModLoader;
 
 namespace WinglessFlight
@@ -33,7 +34,7 @@ namespace WinglessFlight
             player.wings = -1;
 
             // Iterate over accessory slots
-            for (int i = Constants.AccessoryOffset; i < Constants.AccessoryOffset + Constants.AccessoryCount + player.extraAccessorySlots; i++)
+            for (int i = AccessoryOffset; i < AccessoryOffset + AccessoryCount + player.extraAccessorySlots; i++)
             {
                 if(!player.hideVisual[i])
                 {
@@ -42,7 +43,7 @@ namespace WinglessFlight
             }
 
             // Iterate over vanity accessory slots
-            for (int i = Constants.SocialOffset; i < Constants.SocialOffset + Constants.AccessoryCount + player.extraAccessorySlots; i++)
+            for (int i = SocialOffset; i < SocialOffset + AccessoryCount + player.extraAccessorySlots; i++)
             {
                 ShowItem(i);
             }
