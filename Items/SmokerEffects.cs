@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using System;
 using Terraria;
 using Terraria.Graphics.Shaders;
 using Terraria.ID;
@@ -7,7 +8,7 @@ namespace WinglessFlight.Items
 {
     interface SmokerEffect
     {
-        void DoEffects(Player player);
+        void DoEffects(Player player, float timeLeft, int maxTime);
     }
 
     class SpectreSmokerEffect : SmokerEffect
@@ -18,11 +19,10 @@ namespace WinglessFlight.Items
 
         private int soundDelay = 0;
 
-        public void DoEffects(Player player)
+        public void DoEffects(Player player, float timeLeft, int maxTime)
         {
             // Determine if the player is in the flight state
-            int maxFlightTime = player.wingTimeMax + (player.rocketBoots == 0 ? 0 : player.rocketTimeMax * 6);
-            if (player.controlJump && player.wings > 0 && player.wingTime > 0 && player.wingTime < maxFlightTime && player.velocity.Y != 0)
+            if (player.controlJump && player.wingTime > 0)
             {
                 // Loop sound
                 if (soundDelay <= 0)

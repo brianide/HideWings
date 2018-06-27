@@ -19,9 +19,11 @@ namespace WinglessFlight
         // Renders smoker sounds/visuals
         public override void FrameEffects()
         {
-            if (SmokerSlot >= 0)
+            // Begin running effects once the player entered the flight state
+            int maxFlightTime = player.wingTimeMax + (player.rocketBoots == 0 ? 0 : player.rocketTimeMax * 6);
+            if (SmokerSlot >= 0 && player.wings > 0 && player.wingTime < maxFlightTime && player.velocity.Y != 0)
             {
-                smoke.DoEffects(player);
+                smoke.DoEffects(player, player.wingTime, maxFlightTime);
             }
         }
 
